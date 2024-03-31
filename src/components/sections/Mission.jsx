@@ -1,16 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import mission from "../../../public/images/image.jpg";
+import missiongreen from "../../../public/images/imagegreen.jpg";
 
 export default function Mission() {
   return (
     <div className="relative">
-      <div className="absolute top-8 md:top-8 lg:top-16  text-center w-full">
+      <div className="absolute z-10 top-14 md:top-8 lg:top-16  text-center w-full">
         <div className="mx-auto max-w-[60%] lg:w-[40%] text-center text-white md:absolute  md:-left-14 lg:left-8 ">
           <h1 className="text-3xl md:text-5xl lg:text-7xl font-semibold mb-5">
             OUR MAIN <br /> VALUES{" "}
           </h1>
-          <h3 className="md:text-xl lg:text-2xl text-black underline font-semibold">
+          <h3 className="md:text-xl lg:text-2xl text-orange md:text-black underline font-semibold">
             Our Mission & Vision
           </h3>
           <p className="mt-6 lg:mt-10 md:w-[70%] lg:w-[100%] mx-auto">
@@ -22,8 +23,16 @@ export default function Mission() {
           </div>
         </div>
       </div>
-      <div>
-        <Image src={mission} className="w-full min-h-[350px]" />
+      <div className="relative">
+        <div className="absolute top-0 left-0 w-full h-full " />
+        <Image
+          src={mission}
+          className="w-full hidden md:block min-h-[400px] max-h-[600px]"
+        />
+        <Image
+          src={missiongreen}
+          className="w-full md:hidden blur-[2px] min-h-[400px] max-h-[500px]"
+        />
       </div>
     </div>
   );

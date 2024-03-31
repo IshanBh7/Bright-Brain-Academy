@@ -1,237 +1,191 @@
 "use client";
-import React, { useState } from "react";
-import { FaArrowRight } from "react-icons/fa";
-import { Accordion, AccordionItem } from "@nextui-org/react";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarMenuToggle,
-  NavbarMenuItem,
-  NavbarMenu,
-  NavbarContent,
-  NavbarItem,
-  Link,
-  Button,
-} from "@nextui-org/react";
-import {
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
-} from "@nextui-org/react";
-
-import { AcmeLogo } from "./AcmeLogo";
 import Image from "next/image";
-import Logo from "../../public/images/logo.jpg";
+import Link from "next/link";
+import logo from "../../public/images/logo1.jpg";
+import { useState, useRef } from "react"; // Import useState and useRef hooks
+import { GiHamburgerMenu } from "react-icons/gi";
+import { RxCross2 } from "react-icons/rx";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
-export default function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+import { Accordion, AccordionItem } from "@nextui-org/react";
 
+export default function Nav() {
   const menuItems = ["HOME", "ABOUT_US", "ADMISSIONS", "PROGRAMS", "GALLERY"];
   const submenuItems = {
     ABOUT_US: ["ABOUT US", "MISSION AND VISION"],
     ADMISSIONS: ["ADMISSIONS", "ADMISSION PROCESS"],
-    PROGRAMS: ["PROGRAMS", "PLAY GROUP", "NURSERY", "KINDERGARDEN", "PREP"],
+    PROGRAMS: ["PROGRAMS", "PLAYGROUP", "NURSERY", "KINDERGARDEN", "PREP"],
     GALLERY: ["GALLERY"],
   };
   const formatLinkText = (text) => {
     return text.toLowerCase().replace(/\s+/g, "-");
   };
 
+  // State to manage visibility of submenu items
+  const [activeSubMenu, setActiveSubMenu] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Ref to store the timeout ID
+  const timeoutRef = useRef(null);
+
+  function toggleMenu() {
+    setIsMenuOpen(!isMenuOpen);
+  }
+
+  function handleMouseEnter(menuItem) {
+    setActiveSubMenu(menuItem);
+    clearTimeout(timeoutRef.current);
+  }
+
+  function handleMouseLeave() {
+    // No need to close submenu when mouse leaves
+    // Keep submenu open until mouse leaves submenu
+  }
+
+  function handleSubmenuMouseEnter() {
+    // Clear the timeout when mouse enters the submenu
+    clearTimeout(timeoutRef.current);
+  }
+
+  function handleSubmenuMouseLeave() {
+    // Set a timeout to close the submenu after 2 seconds
+    timeoutRef.current = setTimeout(() => {
+      setActiveSubMenu(null);
+    }, 1500);
+  }
+
   return (
-    <Navbar
-      isBordered
-      isBlurred={false}
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}
-      className="py-3 bg-orange !max-w-[2000px]"
-    >
-      <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        />
-        <NavbarBrand className="ml-6"> 
-    <div className="flex items-center pr-12">
-      <Image
-        alt={'BBA-logo'}
-        height={30}
-        width={30}
-        src='/images/BBAlogo.png'
-      />
-      <p className="text-xl text-blue font-bold text-inherit ml-2">BRIGHT BRAIN ACADEMY</p>
-    </div>
-  </NavbarBrand>
-      </NavbarContent>
-
-      
-
-      <NavbarContent  className="hidden sm:flex ">
-  <NavbarBrand className="ml-6"> 
-    <div className="flex items-center pr-12">
-      <Image
-      className="!w-[7rem] !h-[2rem]"
-        alt={'BBA-logo'}
-        width={50}
-        height={50}
-        src='/images/BBAlogo.png'
-      />
-      <p className="md:text-base lg:text-xl text-blue font-bold text-inherit ml-2">BRIGHT BRAIN ACADEMY</p>
-    </div>
-  </NavbarBrand>
-</NavbarContent>
-
-
-      <NavbarContent className="hidden w-[50%] sm:flex justify-center font-medium">
-        <NavbarItem>
+    <div className="sticky top-0 z-50">
+      <div className="flex md:justify-around items-center text-white bg-[#fbc334] py-4 md:py-4">
+        <div className="block md:hidden ml-4" onClick={toggleMenu}>
+          {isMenuOpen ? <RxCross2 /> : <GiHamburgerMenu />}
+        </div>
+        <div className="flex items-center ">
+          <Image
+            className=" ml-6 mr-1 md:mr-0 md:ml-0"
+            src={logo}
+            width={80}
+            height={80}
+            alt="logo"
+          />
+          <h1 className="text-xl ml-2 mr-1 md:ml-5 font-semibold">
+            Bright Brain Academy
+          </h1>
+        </div>
+        <div className="md:flex hidden">
+          {menuItems.map((menuItem) => (
+            <div
+              className="relative py-2 px-1 lg:px-2.5 text-xs lg:text-base rounded-xl font-medium transition duration-75 ease-in-out hover:bg-[#06346a]"
+              key={menuItem}
+              onMouseEnter={() => handleMouseEnter(menuItem)}
+            >
+              {menuItem === "HOME" ? (
+                <Link href="/" className="cursor-pointer">
+                  {menuItem}
+                </Link>
+              ) : (
+                <>
+                  <h1 className="cursor-pointer">
+                    {menuItem === "ABOUT_US" ? "ABOUT US" : menuItem}
+                  </h1>
+                  {/* Render submenu if activeSubMenu matches */}
+                  {activeSubMenu === menuItem && (
+                    <div
+                      className="absolute p-2 transition duration-75 ease-in-out rounded-lg mt-4 w-[200px] font-normal z-10 bg-[#06346a] border border-gray-200 "
+                      onMouseEnter={handleSubmenuMouseEnter}
+                      onMouseLeave={handleSubmenuMouseLeave}
+                    >
+                      {submenuItems[menuItem].map((subItem) => (
+                        <div
+                          className="transition duration-75 ease-in-out hover:bg-[#fbc334] px-2 py-1 rounded-lg"
+                          key={subItem}
+                        >
+                          <Link href={`/${formatLinkText(subItem)}`}>
+                            {subItem}
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="hidden md:block transition duration-100  ease-in-out hover:mb-2">
           <Link
-            className="cursor-pointer hover:bg-blue py-2 px-3 hover:text-white text-black hover:underline hover:underline-offset-2 hover:rounded-xl"
-            href="/"
-          >
-            HOME
-          </Link>
-        </NavbarItem>
-        <Dropdown>
-          <NavbarItem className="cursor-pointer hover:bg-blue hover:text-white hover:p-2 hover:px-3 hover:rounded-xl hover:underline hover:underline-offset-2">
-            <DropdownTrigger>ABOUT US</DropdownTrigger>
-          </NavbarItem>
-          <DropdownMenu>
-            <DropdownItem
-              className="hover:!bg-blue hover:!text-white"
-              href={`${formatLinkText("ABOUT US")}`}
-              key="home"
-            >
-              ABOUT US
-            </DropdownItem>
-            <DropdownItem
-              className="hover:!bg-blue hover:!text-white"
-              href={`${formatLinkText("MISSION AND VISION")}`}
-              key="home"
-            >
-              MIISION AND VISION
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-        <Dropdown>
-          <NavbarItem className="cursor-pointer hover:bg-blue hover:text-white hover:p-2 hover:px-3 hover:rounded-xl hover:underline hover:underline-offset-2">
-            <DropdownTrigger>ADMISSIONS</DropdownTrigger>
-          </NavbarItem>
-          <DropdownMenu>
-            <DropdownItem
-              className="hover:!bg-blue hover:!text-white"
-              href={`${formatLinkText("ADMISSIONS")}`}
-              key="home"
-            >
-              ADMISSION
-            </DropdownItem>
-            <DropdownItem
-              className="hover:!bg-blue hover:!text-white"
-              href={`${formatLinkText("ADMISSION PROCESS")}`}
-              key="home"
-            >
-              ADMISSION PROCESS
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-        <Dropdown>
-          <NavbarItem className="cursor-pointer hover:bg-blue hover:text-white hover:p-2 hover:px-3 hover:rounded-xl hover:underline hover:underline-offset-2">
-            <DropdownTrigger>PROGRAMS</DropdownTrigger>
-          </NavbarItem>
-          <DropdownMenu>
-            <DropdownItem
-              className="hover:!bg-blue hover:!text-white"
-              href={`${formatLinkText("PROGRAMS")}`}
-              key="home"
-            >
-              PROGRAMS
-            </DropdownItem>
-            <DropdownItem
-              className="hover:!bg-blue hover:!text-white"
-              href={`${formatLinkText("PLAYGROUP")}`}
-              key="home"
-            >
-              PLAY GROUP
-            </DropdownItem>
-            <DropdownItem
-              className="hover:!bg-blue hover:!text-white"
-              href={`${formatLinkText("NURSERY")}`}
-              key="home"
-            >
-              NURSERY
-            </DropdownItem>
-            <DropdownItem
-              className="hover:!bg-blue hover:!text-white"
-              href={`${formatLinkText("KINDERGARDEN")}`}
-              key="home"
-            >
-              KINDERGARDEN
-            </DropdownItem>
-            <DropdownItem
-              className="hover:!bg-blue hover:!text-white"
-              href={`${formatLinkText("PREP")}`}
-              key="home"
-            >
-              PREP
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-        <Dropdown>
-          <NavbarItem className="cursor-pointer hover:bg-blue hover:text-white hover:p-2 hover:px-3 hover:rounded-xl hover:underline hover:underline-offset-2">
-            <DropdownTrigger>GALLERY</DropdownTrigger>
-          </NavbarItem>
-          <DropdownMenu>
-            <DropdownItem
-              className="hover:!bg-blue hover:!text-white"
-              href={`${formatLinkText("GALLERY")}`}
-              key="home"
-            >
-              GALLERY
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-      </NavbarContent>
-      <NavbarContent className="hidden md:block md:flex items-center" justify="end">
-        <NavbarItem className="relative">
-          <Button
-            className="bg-blue text-white rounded-full font-medium mr-7"
+            className="bg-[#06346a] text-white text-[10px] lg:text-sm  rounded-full font-medium py-2 px-3"
             as={Link}
             href={`${formatLinkText("CONTACT US")}`}
           >
             CONTACT US
-          </Button>
-          {/* <FaArrowRight className="absolute top-[30%] right-2 text-white" /> */}
-        </NavbarItem>
-      </NavbarContent>
+          </Link>
+        </div>
+      </div>
+      {isMenuOpen && (
+        <div className="absolute z-20 h-screen pt-16 overflow-hidden !text-white w-full bg-[#fbc334]">
+          <Accordion>
+            {menuItems.map((item, index) => (
+              <AccordionItem
+                classNames={{
+                  heading: "py-2",
+                  title: "text-white font-semibold",
+                  indicator: "text-white",
+                  trigger: "text-white",
+                }}
+                key={`${item}-${index}`}
+                title={item}
+              >
+                {item === "HOME" ? (
+                  <div key={`${item}`}>
+                    <Link
+                      className="w-full text-white"
+                      href="/"
+                      size="lg"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
+                      {item}
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="ml-5">
+                    {submenuItems[item] &&
+                      submenuItems[item].map((subItem, subIndex) => (
+                        <div className="py-1" key={`${item}-${subIndex}`}>
+                          <Link
+                            className="hover:text-[#FE5D37] py-2 w-full text-white"
+                            href={`/${formatLinkText(subItem)}`} // Format the link text for other items
+                            size="lg"
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                          >
+                            {subItem}
+                          </Link>
+                        </div>
+                      ))}
+                  </div>
+                )}
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <div className="container absolute bottom-[70px] mt-5 flex items-center justify-center md:justify-between">
+            <div className="w-1/3 bg-[#06346a] p-[20px] rounded-tr-full"></div>
 
-      <NavbarMenu className="mt-60">
-        <Accordion>
-          {menuItems.map((item, index) => (
-            <AccordionItem key={`${item}-${index}`} title={item}>
-              {item === "HOME" ? (
-                <NavbarMenuItem key={`${item}`}>
-                  <Link className="w-full text-black" href="/" size="lg">
-                    {item}
-                  </Link>
-                </NavbarMenuItem>
-              ) : (
-                <div className="ml-5">
-                  {submenuItems[item] &&
-                    submenuItems[item].map((subItem, subIndex) => (
-                      <NavbarMenuItem key={`${item}-${subIndex}`}>
-                        <Link
-                          className="hover:text-orange w-full text-black"
-                          href={`/${formatLinkText(subItem)}`} // Format the link text for other items
-                          size="lg"
-                        >
-                          {subItem}
-                        </Link>
-                      </NavbarMenuItem>
-                    ))}
-                </div>
-              )}
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </NavbarMenu>
-    </Navbar>
+            <div className="text-center font-thin flex justify-center lg:w-1/6">
+              <FaFacebookF className="mr-3 ml-2" />
+              <FaTwitter className="mr-3 ml-3" />
+              <FaInstagram className="mr-3 ml-3" />
+              <FaLinkedinIn className="ml-3 mr-2" />
+            </div>
+
+            <div className="w-1/3 bg-[#06346a] p-[20px] rounded-tl-full"></div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
