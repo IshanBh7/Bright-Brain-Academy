@@ -61,7 +61,7 @@ export default function Nav() {
 
   return (
     <div className="sticky top-0 z-50">
-      <div className="flex md:justify-around items-center text-white bg-[#fbc334] py-4 md:py-4">
+      <div className="flex md:justify-around items-center text-black bg-[#fbc334] py-4 md:py-4">
         <div className="block md:hidden ml-4" onClick={toggleMenu}>
           {isMenuOpen ? <RxCross2 /> : <GiHamburgerMenu />}
         </div>
@@ -73,7 +73,7 @@ export default function Nav() {
             height={80}
             alt="logo"
           />
-          <h1 className="text-xl ml-2 mr-1 md:ml-5 font-semibold">
+          <h1 className="text-xl ml-2 mr-1 md:ml-5 font-bold">
             Bright Brain Academy
           </h1>
         </div>
