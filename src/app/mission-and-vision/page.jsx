@@ -17,7 +17,7 @@ export default function MissionPage() {
       </div> */}
       <div className="text-center mt-20 mb-10 px-20">
         <h1 className=" text-4xl lg:text-6xl mb-10 font-semibold">
-          MISSION & VISSION
+          MISSION & VISION
         </h1>
         <div>
           <h3 className="text-xl lg:text-2xl mb-5 text-yellow">MISSION</h3>
