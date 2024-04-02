@@ -73,7 +73,7 @@ export default function Nav() {
             height={80}
             alt="logo"
           />
-          <h1 className="text-xl ml-2 mr-1 md:ml-5 font-bold">
+          <h1 className="text-xl ml-2 mr-1 md:ml-5 font-extrabold">
             BRIGHT BRAIN ACADEMY
           </h1>
         </div>
