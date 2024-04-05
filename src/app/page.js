@@ -12,12 +12,12 @@ import Testimonials from "@/components/sections/Testimonials";
 export default function Home() {
   return (
     <div>
-      <Testimonials/>
-      {/* <CarouselDiv />
+      <CarouselDiv />
       <About />
       <Mission />
       <Programs />
-      <Brochure /> */}
+      <Brochure />
+      <Testimonials/>
     </div>
   );
 }
