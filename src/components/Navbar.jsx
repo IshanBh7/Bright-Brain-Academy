@@ -61,8 +61,8 @@ export default function Nav() {
 
   return (
     <div className="sticky top-0 z-50">
-      <div className="flex md:justify-around items-center text-white bg-[#fbc334] py-4 md:py-4">
-        <div className="block md:hidden ml-4" onClick={toggleMenu}>
+      <div className="flex md:justify-around items-center text-black bg-[#fbc334] py-4 md:py-4">
+        <div className="block md:hidden ml-4 text-xl" onClick={toggleMenu}>
           {isMenuOpen ? <RxCross2 /> : <GiHamburgerMenu />}
         </div>
         <div className="flex items-center ">
@@ -73,14 +73,14 @@ export default function Nav() {
             height={80}
             alt="logo"
           />
-          <h1 className="text-xl ml-2 mr-1 md:ml-5 font-semibold">
-            Bright Brain Academy
+          <h1 className="text-xl ml-2 mr-1 md:ml-5 font-extrabold">
+            BRIGHT BRAIN ACADEMY
           </h1>
         </div>
         <div className="md:flex hidden">
           {menuItems.map((menuItem) => (
             <div
-              className="relative py-2 px-1 lg:px-2.5 text-xs lg:text-base rounded-xl font-medium transition duration-75 ease-in-out hover:bg-[#06346a]"
+              className="relative py-2 px-1 lg:px-2.5 text-xs lg:text-base rounded-xl font-medium transition duration-75 ease-in-out hover:text-white hover:bg-[#06346a]"
               key={menuItem}
               onMouseEnter={() => handleMouseEnter(menuItem)}
             >
@@ -102,7 +102,7 @@ export default function Nav() {
                     >
                       {submenuItems[menuItem].map((subItem) => (
                         <div
-                          className="transition duration-75 ease-in-out hover:bg-[#fbc334] px-2 py-1 rounded-lg"
+                          className="transition duration-75 ease-in-out text-white hover:bg-[#fbc334] px-2 py-1 rounded-lg"
                           key={subItem}
                         >
                           <Link href={`/${formatLinkText(subItem)}`}>
