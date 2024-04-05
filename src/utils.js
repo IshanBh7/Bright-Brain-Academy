@@ -40,3 +40,24 @@ export const programs = [
     timings: "3 hours",
   },
 ];
+
+export const feeds = [
+  {
+    img:program1,
+    feed:"Our child thrived in Bright Brain Academy's nursery program. The caring environment and engaging activities laid a strong foundation for learning.",
+    name:"XYZ Sharma"
+  },
+  {
+    img:program2,
+    feed:"Our child thrived in Bright bRain Academy's nursery program. The caring environment and engaging activities laid a strong foundation for learning.",
+    name:"XYZ Sharma"
+  },{
+    img:program3,
+    feed:"Our child thrived in Bright bRain Academy's nursery program. The caring environment and engaging activities laid a strong foundation for learning.",
+    name:"XYZ Sharma"
+  },{
+    img:program4,
+    feed:"Our child thrived in Bright bRain Academy's nursery program. The caring environment and engaging activities laid a strong foundation for learning.",
+    name:"XYZ Sharma"
+  }
+]

@@ -7,27 +7,17 @@ import Programs from "@/components/sections/Programs";
 import Footer from "@/components/sections/Footer";
 import Image from "next/image";
 import * as React from "react";
+import Testimonials from "@/components/sections/Testimonials";
 
 export default function Home() {
   return (
     <div>
-      {/* <Navbar /> */}
-      <CarouselDiv />
+      <Testimonials/>
+      {/* <CarouselDiv />
       <About />
       <Mission />
       <Programs />
-      <Brochure />
-      
-      {/* 
-      Navbar                  -    Done
-      Carousel Component
-      More about us           -    Done
-      School Faciliities
-      Mission and vision      -    Done
-      Programs                -    Done
-      Brochure                -    Done
-      Footer
-      */}
+      <Brochure /> */}
     </div>
   );
 }
