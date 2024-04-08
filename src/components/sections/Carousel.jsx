@@ -4,7 +4,8 @@ import Image from "next/image";
 
 import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
-
+import {motion,AnimatePresence} from "framer-motion"
+ 
 const ElasticCarousel = ({ items }) => {
   const [currentItem, setCurrentItem] = useState(0);
   const [imageHeight, setImageHeight] = useState(0);
@@ -36,6 +37,7 @@ const ElasticCarousel = ({ items }) => {
   };
 
   return (
+    <AnimatePresence mode="wait">
     <div className="relative">
       <div className="overflow-x-hidden">
         <div
@@ -56,31 +58,102 @@ const ElasticCarousel = ({ items }) => {
                 alt={item.title}
                 className="block w-full h-full max-h-[600px] md:max-h-screen object-center object-cover"
               />
-              <div className="absolute bottom-52 md:bottom-28 md:left-10 p-4 text-white">
-                <h3 className="text-5xl md:text-6xl lg:text-7xl font-semibold mb-10">
+              <div 
+              className="absolute bottom-52 md:bottom-28 md:left-10 p-4 text-white">
+                <motion.h3 
+                initial={{
+                  x:-60,
+                  opacity:1
+                }} 
+                animate={{
+                  x:0,
+                  opacity:1
+                }}
+                end={{
+                  x:0,
+                  opacity:1
+                }}
+                transition={{
+                  ease: 'easeInOut',
+                  duration: 1,
+                  delay:0.5
+                }}
+                className="text-5xl md:text-6xl lg:text-7xl font-semibold mb-10">
                   {item.title}
-                </h3>
-                <p className="text-base md:text-xl mg:text-2xl">
+                </motion.h3>
+                <motion.p initial={{
+                  x:60,
+                  opacity:1
+                }} 
+                animate={{
+                  x:0,
+                  opacity:1
+                }}
+                end={{
+                  x:0,
+                  opacity:1
+                }}
+                transition={{
+                  ease: 'easeInOut',
+                  duration: 1,
+                  delay:0.5
+                }} className="text-base md:text-xl mg:text-2xl">
                   {item.subtitle}
-                </p>
+                </motion.p>
               </div>
             </div>
           ))}
         </div>
-        <button
+        <motion.button
+        initial={{
+          y:60,
+          opacity:1
+        }} 
+        animate={{
+          y:0,
+          opacity:1
+        }}
+        end={{
+          y:0,
+          opacity:1
+        }}
+        transition={{
+          ease: 'easeInOut',
+          duration: 1,
+          delay:0.5
+        }}
           className="absolute text-5xl font-semibold top-[75%] md:top-[75%] right-8 md:right-12 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-15 h-15 flex items-center justify-center"
           onClick={prevItem}
         >
           <IoIosArrowDropleft />
-        </button>
-        <button
+        </motion.button>
+        <motion.button
+        initial={{
+          y:-60,
+          opacity:1
+        }} 
+        animate={{
+          y:0,
+          opacity:1
+        }}
+        end={{
+          y:0,
+          opacity:1
+        }}
+        transition={{
+          ease: 'easeInOut',
+          duration: 1,
+          delay:0.5
+        }}
           className="absolute text-5xl font-semibold top-[85%] md:top-[85%] right-8 md:right-12 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-15 h-15 flex items-center justify-center"
           onClick={nextItem}
         >
           <IoIosArrowDropright />
-        </button>
+        </motion.button>
       </div>
     </div>
+    
+    </AnimatePresence>
   );
 };
 
