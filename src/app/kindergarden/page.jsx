@@ -22,10 +22,10 @@ export default function Kindergarden() {
         </div>
         <div className="bg-[url('../../public/images/bg-header-bottom.png')]  h-[18px]"></div>
       </div>
-      <div className="text-center text-5xl font-semibold my-16">
+      <div className="text-center text-5xl font-semibold my-16 mt-20">
         KINDERGARDEN
       </div>
-      <div className="md:text-left md:grid grid-cols-2 pb-20 px-8 lg:px-20">
+      <div className="md:text-left md:grid grid-cols-2 pb-20 mb-14 px-8 lg:px-20">
         <div className="text-light-black text-sm md:text-base mt-10">
           <p>
             At Kindergarten, we blend structured learning with play, shaping

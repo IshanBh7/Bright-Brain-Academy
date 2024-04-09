@@ -11,6 +11,7 @@ export const programs = [
     age: "1-3 years",
     size: "30 kids",
     timings: "3 hrs",
+    slug:"playgroup"
   },
   {
     img: program4,
@@ -20,6 +21,7 @@ export const programs = [
     age: "1-3 years",
     size: "30 kids",
     timings: "3 hrs",
+    slug:"kindergarden"
   },
   {
     img: program3,
@@ -29,6 +31,7 @@ export const programs = [
     age: "1-3 years",
     size: "30 kids",
     timings: "3 hrs",
+    slug:"nursery"
   },
   {
     img: program2,
@@ -38,8 +41,32 @@ export const programs = [
     age: "1-3 years",
     size: "30 kids",
     timings: "3 hours",
+    slug:"prep"
+  },
+  
+  {
+    img: program2,
+    title: "I - V",
+    blurb:
+      "Where Imagination Blooms: Nurturing young minds to soar with knowledge and creativity.",
+    age: "1-3 years",
+    size: "30 kids",
+    timings: "3 hours",
+    slug:"first-to-fifth"
+  },
+  
+  {
+    img: program2,
+    title: "VI - VIII",
+    blurb:
+      "Embarking on Explorations: Empowering budding intellects to take flight on the wings of curiosity and discovery.",
+    age: "1-3 years",
+    size: "30 kids",
+    timings: "3 hours",
+    slug:"sixth-to-eighth"
   },
 ];
+
 
 export const feeds = [
   {

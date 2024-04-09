@@ -15,8 +15,8 @@ export default function AdmissionProcess() {
           </Link>
         </div>
       </div> */}
-      <div className="text-center mt-20 mb-20 px-10 md:px-20">
-        <h1 className=" text-4xl lg:text-6xl mb-10 font-semibold">
+      <div className="text-center mt-20 mb-28 px-10 md:px-20">
+        <h1 className=" text-4xl lg:text-6xl mb-14 font-semibold">
           ADMISSION PROCESS
         </h1>
         <div>

@@ -17,7 +17,7 @@ export default function AboutPage() {
           </Link>
         </div>
       </div> */}
-      <div className="text-center mt-20 mb-10">
+      <div className="text-center mt-20 mb-20">
         <h1 className="text-4xl lg:text-6xl mb-5 font-semibold">
           ABOUT <br /> BRIGHT BRAIN ACADEMY
         </h1>
@@ -40,7 +40,7 @@ export default function AboutPage() {
               a time.
             </p>
           </div>
-          <div className="w-[300px] lg:w-[400px] mx-auto mt-10 lg:mx-0 justify-self-center">
+          <div className="w-[300px] md:w-[330px] lg:w-[400px] mx-auto mt-10 lg:mt-0 lg:mx-0 justify-self-center">
             <Image className="rounded-2xl" src={about} />
           </div>
         </div>

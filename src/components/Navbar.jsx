@@ -20,7 +20,7 @@ export default function Nav() {
   const submenuItems = {
     ABOUT_US: ["ABOUT US", "MISSION AND VISION"],
     ADMISSIONS: ["ADMISSIONS", "ADMISSION PROCESS"],
-    PROGRAMS: ["PROGRAMS", "PLAYGROUP", "NURSERY", "KINDERGARDEN", "PREP"],
+    PROGRAMS: ["PROGRAMS", "PLAYGROUP", "NURSERY", "KINDERGARDEN", "PREP","FIRST TO FIFTH", "SIXTH TO EIGHTH"],
     GALLERY: ["GALLERY"],
   };
   const formatLinkText = (text) => {
