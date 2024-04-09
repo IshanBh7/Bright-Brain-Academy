@@ -1,6 +1,8 @@
+"use client"
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import {easeInOut, motion} from "framer-motion"
 
 import aboutimg1 from "../../../public/images/aboutSection/about1.jpeg";
 import aboutimg2 from "../../../public/images/aboutSection/about2.jpeg";
@@ -9,7 +11,12 @@ import aboutimg3 from "../../../public/images/aboutSection/about3.jpeg";
 function About() {
   return (
     <div className="lg:grid grid-cols-2 my-20">
-      <div className="flex items-start justify-center flex-col m-5 mb-10 lg:mb-5 md:ml-20">
+      <motion.div 
+      initial={{x:-40, opacity:0}}
+      whileInView={{ x:0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ease:'easeInOut', duration:0.75, delay:0.2}}
+      className="flex items-start justify-center flex-col m-5 mb-10 lg:mb-5 md:ml-20">
         <h1 className="text-3xl">
           Learn more about Our Work and Our Cultural Activities
         </h1>
@@ -29,8 +36,12 @@ function About() {
             Read More
           </Link>
         </div>
-      </div>
-      <div className="grid grid-cols-2">
+      </motion.div>
+      <motion.div 
+      initial={{x:40, opacity:0}}
+      whileInView={{ x:0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ease:'easeInOut', duration:0.75}} className="grid grid-cols-2">
         <div className="col-span-2  justify-self-center transition ease-out bg-[#FFF5F3] hover:bg-orange rounded-full flex justify-center items-center w-[300px] h-[300px] md:w-[350px] md:h-[350px]">
           <Image
             style={{ borderRadius: "50%", width: "90%", height: "90%" }}
@@ -52,7 +63,7 @@ function About() {
             alt="About Image"
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

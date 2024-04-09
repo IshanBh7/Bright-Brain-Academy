@@ -101,7 +101,7 @@ export default function Nav() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{
                   ease: 'easeInOut',
-                  duration: 0.75 + index * 0.3
+                  duration: 0.75
                 }}
                 className="relative py-2 px-1 lg:px-2.5 text-xs lg:text-base rounded-xl font-medium transition duration-75 ease-in-out hover:text-white hover:bg-[#06346a]"
                 onMouseEnter={() => handleMouseEnter(menuItem)}

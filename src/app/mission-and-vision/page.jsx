@@ -15,7 +15,7 @@ export default function MissionPage() {
           </Link>
         </div>
       </div> */}
-      <div className="text-center mt-20 mb-10 px-20">
+      <div className="text-center mt-20 mb-10 px-10 md:px-20">
         <h1 className=" text-4xl lg:text-6xl mb-10 font-semibold">
           MISSION & VISION
         </h1>

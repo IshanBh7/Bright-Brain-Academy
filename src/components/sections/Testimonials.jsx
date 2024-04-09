@@ -5,6 +5,7 @@ import { FaQuoteRight } from "react-icons/fa";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { useEffect, useRef } from "react";
+import {motion} from "framer-motion"
 
 export default function Testimonials() {
     const scrollTestimonialRef = useRef(null);
@@ -26,7 +27,12 @@ export default function Testimonials() {
     }
   }, [feeds.length]);
   return (
-    <div className="flex flex-col justify-center items-center my-10">
+    <motion.div 
+     initial={{y:40, opacity:0}}
+     whileInView={{y:0, opacity:1}}
+     transition={{ease:'easeInOut', duration:0.75}}
+     viewport={{once:'true'}}
+     className="flex flex-col justify-center items-center my-10">
       <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold">What Parents Say </h1>
       <h1 className="text-base md:text-lg lg:text-xl font-medium pt-3 pb-5 text-[#fbc334]">
         Testimonials That Speak Volumes
@@ -66,6 +72,6 @@ export default function Testimonials() {
         <IoIosArrowDropleftCircle className="arrow-left text-5xl absolute top-[40%] left-2 md:left-10 cursor-pointer text-[#06346a]"/>
         <IoIosArrowDroprightCircle className="arrow-right text-5xl absolute top-[40%] right-2 md:right-10  cursor-pointer text-[#06346a]"/>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -75,8 +75,7 @@ const ElasticCarousel = ({ items }) => {
                 }}
                 transition={{
                   ease: 'easeInOut',
-                  duration: 1,
-                  delay:0.5
+                  duration: 1
                 }}
                 className="text-5xl md:text-6xl lg:text-7xl font-semibold mb-10">
                   {item.title}
@@ -95,8 +94,7 @@ const ElasticCarousel = ({ items }) => {
                 }}
                 transition={{
                   ease: 'easeInOut',
-                  duration: 1,
-                  delay:0.5
+                  duration: 1
                 }} className="text-base md:text-xl mg:text-2xl">
                   {item.subtitle}
                 </motion.p>
@@ -119,8 +117,7 @@ const ElasticCarousel = ({ items }) => {
         }}
         transition={{
           ease: 'easeInOut',
-          duration: 1,
-          delay:0.5
+          duration: 1
         }}
           className="absolute text-5xl font-semibold top-[75%] md:top-[75%] right-8 md:right-12 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-15 h-15 flex items-center justify-center"
           onClick={prevItem}
@@ -142,8 +139,7 @@ const ElasticCarousel = ({ items }) => {
         }}
         transition={{
           ease: 'easeInOut',
-          duration: 1,
-          delay:0.5
+          duration: 1
         }}
           className="absolute text-5xl font-semibold top-[85%] md:top-[85%] right-8 md:right-12 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-15 h-15 flex items-center justify-center"
           onClick={nextItem}

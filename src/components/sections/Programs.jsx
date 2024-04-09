@@ -1,9 +1,16 @@
+"use client"
 import Image from "next/image";
 import { programs } from "../../utils";
+import {motion} from "framer-motion"
 export default function Programs() {
   return (
     <div className="my-20">
-      <div className="flex flex-col items-center justify-center px-12 md:px-16">
+      <motion.div 
+      initial={{y:40, opacity:0}}
+      whileInView={{y:0, opacity:1}}
+      transition={{ease:'easeInOut', duration:0.75}}
+      viewport={{once:'true'}}
+      className="flex flex-col items-center justify-center px-12 md:px-16">
         <h1 className="text-4xl my-5">School Programs</h1>
         <p className="text-light-black text-center text-sm md:text-base w-[100%] lg:w-[70%]">
           Discover our School Programs: Explore our diverse range of classes
@@ -12,7 +19,10 @@ export default function Programs() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {programs.map((prog, index) => (
-            <div key={index}>
+            <motion.div initial={{y:40, opacity:0}}
+            whileInView={{y:0, opacity:1}}
+            transition={{ease:'easeInOut', duration:0.75}}
+            viewport={{once:'true'}} key={index}>
               <div className="rounded-full mx-auto w-[240px] h-[240px] flex justify-center items-center bg-orange">
                 <Image
                   className="rounded-full object-cover w-[210px] h-[210px]"
@@ -45,10 +55,10 @@ export default function Programs() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
