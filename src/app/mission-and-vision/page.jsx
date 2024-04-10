@@ -1,20 +1,13 @@
-import Link from "next/link";
-
+"use client"
+import { motion } from "framer-motion";
 export default function MissionPage() {
   return (
-    <div>
-      {/* <div className="bg-[#65B741] text-white flex justify-between items-center px-10 h-16">
-        <div className="font-semibold">MISSION & VISION</div>
-        <div>
-          <Link className="mr-3 hover:text-orange" href="/">
-            Home
-          </Link>
-          |
-          <Link className="ml-3 hover:text-orange" href="mission-and-vision">
-            Mission & Vision
-          </Link>
-        </div>
-      </div> */}
+    <motion.div
+    initial={{y:40, opacity:0}}
+    animate={{y:0, opacity:1}}
+    exit={{y:0, opacity:1}}
+    transition={{ease:'easeIn', duration:0.75}}
+    >
       <div className="text-center mt-20 mb-28 px-10 md:px-20">
         <h1 className=" text-4xl lg:text-6xl mb-16 font-semibold">
           MISSION & VISION
@@ -42,6 +35,6 @@ export default function MissionPage() {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

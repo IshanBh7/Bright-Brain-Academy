@@ -74,7 +74,7 @@ export default function Nav() {
         }}
         transition={{
           ease: 'easeInOut',
-          duration: 0.75
+          duration: 0.5
         }}
         className="sticky top-0 z-50">
         <div className="flex md:justify-around items-center text-black bg-[#fbc334] py-4 md:py-4">
@@ -101,7 +101,7 @@ export default function Nav() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{
                   ease: 'easeInOut',
-                  duration: 0.75
+                  duration: 0.5
                 }}
                 className="relative py-2 px-1 lg:px-2.5 text-xs lg:text-base rounded-xl font-medium transition duration-75 ease-in-out hover:text-white hover:bg-[#06346a]"
                 onMouseEnter={() => handleMouseEnter(menuItem)}
@@ -156,8 +156,8 @@ export default function Nav() {
                 <AccordionItem
                   classNames={{
                     heading: "py-2",
-                    title: "text-white font-semibold",
-                    indicator: "text-white",
+                    title: "text-black font-semibold",
+                    indicator: "text-black",
                     trigger: "text-white",
                   }}
                   key={`${item}-${index}`}
@@ -166,7 +166,7 @@ export default function Nav() {
                   {item === "HOME" ? (
                     <div key={`${item}`}>
                       <Link
-                        className="w-full text-white"
+                        className="w-full text-black"
                         href="/"
                         size="lg"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -180,7 +180,7 @@ export default function Nav() {
                         submenuItems[item].map((subItem, subIndex) => (
                           <div className="py-1" key={`${item}-${subIndex}`}>
                             <Link
-                              className="hover:text-[#FE5D37] py-2 w-full text-white"
+                              className="hover:text-[#FE5D37] py-2 w-full text-black"
                               href={`/${formatLinkText(subItem)}`} // Format the link text for other items
                               size="lg"
                               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -194,7 +194,7 @@ export default function Nav() {
                 </AccordionItem>
               ))}
             </Accordion>
-            <div className="container absolute bottom-[70px] mt-5 flex items-center justify-center md:justify-between">
+            <div className="container absolute bottom-[15%] mt-5 flex items-center justify-center md:justify-between">
               <div className="w-1/3 bg-[#06346a] p-[20px] rounded-tr-full"></div>
 
               <div className="text-center font-thin flex justify-center lg:w-1/6">

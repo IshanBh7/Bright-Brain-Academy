@@ -22,7 +22,7 @@ export default function Brochure() {
           <p className="text-black text-base lg:text-lg font-semibold">
             Download our brochure for more info
           </p>
-          <div className="bg-blue text-white flex justify-center mx-10 lg:mx-0 py-[10px] lg:py-[15px] w-[150px] mt-10 rounded-full">
+          <div className="bg-blue text-white flex justify-center mx-10 lg:mx-0 py-[10px] lg:py-[15px] w-[150px] mt-8 rounded-full">
             <a
               href="https://drive.google.com/uc?export=download&id=17br-0_Vl4wjhCdg8JzHVioTCR6kDQDBx"
               className="font-medium"

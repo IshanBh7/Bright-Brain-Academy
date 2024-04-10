@@ -47,10 +47,10 @@ const ElasticCarousel = ({ items }) => {
           {items.map((item) => (
             <div
               key={item.id}
-              className="flex-none relative overflow-hidden w-full max-h-[600px] md:max-h-screen"
+              className="flex-none relative overflow-hidden w-full max-h-[600px]  md:max-h-screen"
               style={{ height: `${imageHeight}px` }}
             >
-              <div className="absolute top-0 left-0 w-full  h-full bg-black opacity-10" />
+              <div className="absolute top-0 left-0 w-full  h-full bg-black opacity-30" />
               <Image
                 src={item.img}
                 width={800}

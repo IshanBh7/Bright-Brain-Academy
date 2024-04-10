@@ -12,7 +12,7 @@ import logo from "../../../public/images/BBAlogo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue text-[#ffffff80] pl-4 md:px-24  py-5">
+    <footer className="bg-blue text-[#ffffff80] pl-4 md:px-24 pt-8 py-5">
       <div className="container grid md:grid-cols-2 lg:grid-cols-3">
         <div className="max-w-72 ">
           <Image className="md:mx-12 " src={logo} width={120} />
