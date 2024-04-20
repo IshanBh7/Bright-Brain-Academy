@@ -8,9 +8,9 @@ export default function Kindergarden() {
     <div>
       <div className="bg-[url('../../public/images/carousel-1.jpg')] bg-cover bg-center text-white">
         <div className="bg-[url('../../public/images/bg-header-top.png')] h-[10px]"></div>
-        <h1 className="text-3xl md:text-5xl font-semibold pt-20 pb-10 pl-10 md:pl-24">
+        <h2 className="text-3xl md:text-5xl font-semibold pt-20 pb-10 pl-10 md:pl-24">
           VI - VIII STANDARD
-        </h1>
+        </h2>
         <div>
           <h3 className="text-xl md:text-xl pb-24 pl-10 md:pl-24">
             <Link className="text-orange" href="/">
@@ -22,7 +22,7 @@ export default function Kindergarden() {
         <div className="bg-[url('../../public/images/bg-header-bottom.png')]  h-[18px]"></div>
       </div>
       <div className="text-center text-5xl font-semibold my-16 mt-20">
-        VI - VIII STANDARD
+       <h3> VI - VIII STANDARD</h3>
       </div>
       <div className="md:text-left md:grid grid-cols-2 pb-20 mb-14 px-8 lg:px-20">
         <div className="text-light-black text-sm md:text-base mt-10">
