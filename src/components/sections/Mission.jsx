@@ -18,9 +18,9 @@ export default function Mission() {
       }}
       className="absolute z-10 top-14 md:top-8 lg:top-16  text-center w-full">
         <div className="mx-auto max-w-[60%] lg:w-[40%] text-center text-white md:absolute  md:-left-14 lg:left-8 ">
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-semibold mb-5">
+          <h2 className="text-3xl md:text-5xl lg:text-7xl font-semibold mb-5">
             OUR MAIN <br /> VALUES{" "}
-          </h1>
+          </h2>
           <h3 className="md:text-xl lg:text-2xl text-orange md:text-black underline font-semibold">
             Our Mission & Vision
           </h3>
