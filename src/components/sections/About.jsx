@@ -17,9 +17,9 @@ function About() {
       viewport={{ once: true }}
       transition={{ease:'easeInOut', duration:0.75, delay:0.2}}
       className="flex items-start justify-center flex-col m-5 mb-10 lg:mb-5 md:ml-20">
-        <h1 className="text-3xl">
-          Learn more about Our Work and Our Cultural Activities
-        </h1>
+       <h2 className="text-3xl">
+          Learn more about Our Work and Cultural Activities
+        </h2>
         <p className="mt-5 text-light-black">
           Beyond traditional academics, we prioritize holistic development
           through team games, competitions, and cultural events. Our curriculum
