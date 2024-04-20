@@ -9,9 +9,9 @@ export default function MissionPage() {
     transition={{ease:'easeIn', duration:0.75}}
     >
       <div className="text-center mt-20 mb-28 px-10 md:px-20">
-        <h1 className=" text-4xl lg:text-6xl mb-16 font-semibold">
+        <h2 className=" text-4xl lg:text-6xl mb-16 font-semibold">
           MISSION & VISION
-        </h1>
+        </h2>
         <div>
           <h3 className="text-xl lg:text-2xl mb-5 text-yellow">MISSION</h3>
           <p className="text-sm md:text-base text-light-black">
