@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { Alfa_Slab_One } from "next/font/google";
 import logo from "../../public/images/logo1.jpg";
 import { useState, useRef, useEffect } from "react"; // Import useState and useRef hooks
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -11,6 +12,14 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
+
+
+const alfa = Alfa_Slab_One({
+  subsets: ['latin'],
+  variable: '--font-alfa',
+  weight: '400',
+});
+
 
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -89,9 +98,11 @@ export default function Nav() {
               height={80}
               alt="logo"
             />
-            <h1 className="text-xl ml-2 mr-1 md:ml-5 font-extrabold">
-              BRIGHT BRAIN ACADEMY
-            </h1>
+            <div className={alfa.className}>
+          <h1 className=" title text-2xl text-blue  ml-2 mr-1 md:ml-5 ">
+            BRIGHT BRAIN ACADEMY
+          </h1>
+        </div> 
           </div>
           <div className="md:flex hidden">
             {menuItems.map((menuItem, index) => (
@@ -103,7 +114,7 @@ export default function Nav() {
                   ease: 'easeInOut',
                   duration: 0.5
                 }}
-                className="relative py-2 px-1 lg:px-2.5 text-xs lg:text-base rounded-xl font-medium transition duration-75 ease-in-out hover:text-white hover:bg-[#06346a]"
+                className="nav relative py-2 px-1 lg:px-2.5 text-xs lg:text-base rounded-xl font-semibold transition duration-75 ease-in-out hover:text-white hover:bg-[#06346a]"
                 onMouseEnter={() => handleMouseEnter(menuItem)}
               >
                 {menuItem === "HOME" ? (
@@ -141,7 +152,7 @@ export default function Nav() {
           </div>
           <div className="hidden md:block transition duration-100  ease-in-out hover:mb-2">
             <Link
-              className="bg-[#06346a] text-white text-[10px] lg:text-sm  rounded-full font-medium py-2 px-3"
+              className="nav bg-[#06346a] text-white text-[10px] lg:text-sm  rounded-full font-medium py-2 px-3"
               as={Link}
               href={`${formatLinkText("CONTACT US")}`}
             >
