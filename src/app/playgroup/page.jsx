@@ -22,7 +22,7 @@ export default function Playgroup() {
         </div>
         <div className="bg-[url('../../public/images/bg-header-bottom.png')]  h-[18px]"></div>
       </div>
-      <div className="text-center text-5xl font-semibold my-16 mt-24">PLAYGROUP</div>
+      <div className="text-center text-5xl font-semibold my-16 mt-24"><h3>PLAYGROUP</h3></div>
       <div className="md:text-left md:grid grid-cols-2 pb-20 mb-14 px-8 lg:px-20">
         <div className="text-light-black text-sm md:text-base mt-10">
           <p>
