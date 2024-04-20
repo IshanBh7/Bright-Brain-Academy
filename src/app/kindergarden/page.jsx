@@ -9,9 +9,9 @@ export default function Kindergarden() {
     <div>
       <div className="bg-[url('../../public/images/carousel-1.jpg')] bg-cover bg-center text-white">
         <div className="bg-[url('../../public/images/bg-header-top.png')] h-[10px]"></div>
-        <h1 className="text-3xl md:text-5xl font-semibold pt-20 pb-10 pl-10 md:pl-24">
+        <h2 className="text-3xl md:text-5xl font-semibold pt-20 pb-10 pl-10 md:pl-24">
           Kindergarden
-        </h1>
+        </h2>
         <div>
           <h3 className="text-xl md:text-xl pb-24 pl-10 md:pl-24">
             <Link className="text-orange" href="/">
