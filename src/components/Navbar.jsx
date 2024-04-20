@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Alfa_Slab_One } from "next/font/google";
-import logo from "../../public/images/logo1.jpg";
+import logo from "../../public/images/BBAlogo.png";
 import { useState, useRef, useEffect } from "react"; // Import useState and useRef hooks
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
