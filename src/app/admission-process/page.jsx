@@ -9,9 +9,9 @@ export default function AdmissionProcess() {
     exit={{y:0, opacity:1}}
     transition={{ease:'easeIn', duration:0.75}}>
       <div className="text-center mt-20 mb-28 px-10 md:px-20">
-        <h1 className=" text-4xl lg:text-6xl mb-14 font-semibold">
+        <h2 className=" text-4xl lg:text-6xl mb-14 font-semibold">
           ADMISSION PROCESS
-        </h1>
+        </h2>
         <div>
           <h3 className="text-xl lg:text-2xl mb-5 text-yellow">
             Admission Policy
