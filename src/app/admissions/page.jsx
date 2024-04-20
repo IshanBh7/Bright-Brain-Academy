@@ -31,12 +31,12 @@ export default function Admission() {
 
 
   return (
-    <div className="bg-[#fbc334] py-10 flex flex-col items-center justify-center text-center">
+    <div className="bg-orange py-10 flex flex-col items-center justify-center text-center">
       <ToastContainer  />
       <div>
-        <h1 className="text-white text-5xl md:text-6xl my-5 font-semibold">
+        <h2 className="text-blue text-5xl md:text-6xl my-5 font-semibold">
           APPLY FOR ADMISSION
-        </h1>
+        </h2>
         <h3 className="text-[#06346a] text-lg md:text-xl font-semibold ">
           Fill the below form
         </h3>
@@ -75,7 +75,7 @@ export default function Admission() {
             name="student_query"
           />
           <input
-            className="bg-[#06346a] mt-5 rounded-md text-white w-60 py-3"
+            className="bg-blue mt-5 rounded-md text-white w-60 py-3"
             type="submit"
             value="Send"
           />
