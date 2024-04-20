@@ -78,7 +78,9 @@ const ElasticCarousel = ({ items }) => {
                   duration: 1
                 }}
                 className="text-5xl md:text-6xl lg:text-7xl font-semibold mb-10">
+                 <h2>
                   {item.title}
+                </h2>
                 </motion.h3>
                 <motion.p initial={{
                   x:60,
