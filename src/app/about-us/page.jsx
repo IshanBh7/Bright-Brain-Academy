@@ -14,7 +14,9 @@ export default function AboutPage() {
     exit={{y:0, opacity:1}}
         transition={{ease:'easeInOut', duration:0.75}}
         className="text-4xl lg:text-6xl mb-5 font-semibold">
+         <h2>
           ABOUT <br /> BRIGHT BRAIN ACADEMY
+        </h2>
         </motion.h1>
         <motion.h3 initial={{y:-40, opacity:0}}
         animate={{y:0, opacity:1}}
