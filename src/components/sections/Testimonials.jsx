@@ -33,10 +33,10 @@ export default function Testimonials() {
      transition={{ease:'easeInOut', duration:0.75}}
      viewport={{once:'true'}}
      className="flex flex-col justify-center items-center my-10">
-      <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold">What Parents Say </h1>
-      <h1 className="text-base md:text-lg lg:text-xl font-medium pt-3 pb-5 text-[#fbc334]">
+      <h2 className="text-4xl md:text-5xl lg:text-7xl font-semibold">What Parents Say </h2>
+      <h2 className="text-base md:text-lg lg:text-xl font-medium pt-3 pb-5 text-[#fbc334]">
         Testimonials That Speak Volumes
-      </h1>
+      </h2>
       <h3 className="max-w-[80%] md:max-w-[60%] text-sm lg:text-base text-center text-light-black">
         Explore why families choose our school for their child's education. From
         our nurturing environment to our dedicated staff, find out what sets us
