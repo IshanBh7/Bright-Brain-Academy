@@ -86,7 +86,7 @@ export default function Nav() {
           duration: 0.5
         }}
         className="sticky top-0 z-50">
-        <div className="flex md:justify-around items-center text-black bg-[#fbc334] py-4 md:py-4">
+        <div className="flex md:justify-around items-center text-black bg-orange py-4 md:py-4">
           <div className="block md:hidden ml-4 text-xl" onClick={toggleMenu}>
             {isMenuOpen ? <RxCross2 /> : <GiHamburgerMenu />}
           </div>
