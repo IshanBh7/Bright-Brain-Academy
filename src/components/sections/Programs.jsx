@@ -14,7 +14,7 @@ export default function Programs() {
         viewport={{ once: "true" }}
         className="flex flex-col items-center justify-center px-12 md:px-16"
       >
-        <h1 className="text-4xl my-5">School Programs</h1>
+        <h2 className="text-4xl my-5">School Programs</h2>
         <p className="text-light-black text-center text-sm md:text-base w-[100%] lg:w-[70%]">
           Discover our School Programs: Explore our diverse range of classes
           designed to inspire and prepare students for success.
