@@ -15,10 +15,10 @@ export default function Brochure() {
           <Image src={group} />
         </div>
         <div className="lg:-ml-4 mx-auto lg:mx-0 mt-12 md:mt-14 lg:p-0">
-          <h1 className="text-5xl lg:text-7xl  mb-5 text-white font-semibold">
+          <h2 className="text-5xl lg:text-7xl  mb-5 text-white font-semibold">
             DOWNLOAD <br />
             BROCHURE
-          </h1>
+          </h2>
           <p className="text-black text-base lg:text-lg font-semibold">
             Download our brochure for more info
           </p>
